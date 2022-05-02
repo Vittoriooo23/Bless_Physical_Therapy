@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.mainSceneController">
+   <children>
+      <TableView fx:id="table" layoutX="39.0" layoutY="177.0" prefHeight="881.0" prefWidth="1632.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="160.0">
+        <columns>
+            <TableColumn fx:id="id" prefWidth="${table.width*0.05}" resizable="false" text="id" />
+          <TableColumn fx:id="nameCol" prefWidth="${table.width*0.20}" resizable="false" text="Name" />
+          <TableColumn fx:id="addressCol" minWidth="0.0" prefWidth="${table.width*0.32}" resizable="false" text="Address" />
+            <TableColumn fx:id="doaCol" minWidth="0.0" prefWidth="${table.width*0.1}" resizable="false" text="DOA" />
+            <TableColumn fx:id="dobCol" minWidth="0.0" prefWidth="${table.width*0.1}" resizable="false" text="DOB" />
+            <TableColumn fx:id="partsCol" minWidth="0.0" prefWidth="${table.width*0.18}" resizable="false" text="Parts" />
+            <TableColumn fx:id="countCol" maxWidth="480.00004882812505" minWidth="0.0" prefWidth="${table.width*0.05}" resizable="false" text="Count" />
+        </columns>
+      </TableView>
+      <TextField fx:id="inputName" layoutX="39.0" layoutY="87.0" prefHeight="32.0" prefWidth="414.0" />
+      <Label layoutX="39.0" layoutY="56.0" prefHeight="26.0" prefWidth="288.0" text="Patient Search:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="594.0" layoutY="19.0" text="115 Meacham Ave">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateLabel" layoutX="632.0" layoutY="81.0" prefHeight="38.0" prefWidth="135.0" textAlignment="CENTER">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <VBox layoutX="1278.0" layoutY="19.0" prefHeight="132.0" prefWidth="82.0" spacing="20.0" AnchorPane.rightAnchor="40.0">
+         <children>
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#addButtonPush" prefHeight="26.0" prefWidth="82.0" text="Add" />
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonPush" prefHeight="26.0" prefWidth="82.0" text="Delete" />
+            <Button fx:id="countButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" text="Count++" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

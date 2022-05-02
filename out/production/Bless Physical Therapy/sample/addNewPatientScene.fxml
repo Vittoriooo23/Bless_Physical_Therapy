@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.addNewPatientSceneController">
+   <children>
+      <VBox layoutX="249.0" layoutY="250.0" prefHeight="441.0" prefWidth="553.0" spacing="40.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <TextField fx:id="nameAdd" promptText="Name" />
+            <TextField fx:id="addressAdd" promptText="Address" />
+            <TextField fx:id="doaAdd" promptText="DOA" />
+            <TextField fx:id="dobAdd" promptText="DOB" />
+            <TextField fx:id="partsAdd" promptText="Parts" />
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+      <Button fx:id="addPatientButton" layoutX="1188.0" layoutY="589.0" mnemonicParsing="false" onAction="#addNewPatient" prefHeight="58.0" prefWidth="106.0" text="Add">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
