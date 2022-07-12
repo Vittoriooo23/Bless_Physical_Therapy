@@ -6,23 +6,68 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.addNewPatientSceneController">
-   <children>
-      <VBox layoutX="249.0" layoutY="250.0" prefHeight="441.0" prefWidth="553.0" spacing="40.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="100.0">
-         <children>
-            <TextField fx:id="nameAdd" promptText="Name" />
-            <TextField fx:id="addressAdd" promptText="Address" />
-            <TextField fx:id="doaAdd" promptText="DOA" />
-            <TextField fx:id="dobAdd" promptText="DOB" />
-            <TextField fx:id="partsAdd" promptText="Parts" />
-         </children>
-         <padding>
-            <Insets top="10.0" />
-         </padding>
-      </VBox>
-      <Button fx:id="addPatientButton" layoutX="1188.0" layoutY="589.0" mnemonicParsing="false" onAction="#addNewPatient" prefHeight="58.0" prefWidth="106.0" text="Add">
+    <children>
+        <VBox layoutX="249.0" layoutY="250.0" prefHeight="507.0" prefWidth="723.0" spacing="40.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="100.0">
+            <children>
+                <TextField fx:id="nameAdd" prefHeight="26.0" prefWidth="810.0" promptText="John Doe" />
+                <TextField fx:id="addressAdd" prefHeight="26.0" prefWidth="783.0" promptText="11 Broadway ave. Queens NY 11211" />
+            <DatePicker fx:id="doaDate" />
+            <DatePicker fx:id="dobDate" />
+                <TextField fx:id="partsAdd" promptText="Parts" />
+            <GridPane prefHeight="90.0" prefWidth="1100.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="544.0" minWidth="10.0" prefWidth="193.39999999999998" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="802.0" minWidth="10.0" prefWidth="235.79999999999998" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="802.0" minWidth="10.0" prefWidth="428.20000000000005" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="32.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="52.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="31.599999999999994" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <CheckBox fx:id="CS" mnemonicParsing="false" text="CS" />
+                  <CheckBox fx:id="TS" mnemonicParsing="false" text="TS" GridPane.columnIndex="1" />
+                  <CheckBox fx:id="LS" mnemonicParsing="false" text="LS" GridPane.columnIndex="2" />
+                  <CheckBox fx:id="L_SH" mnemonicParsing="false" text="L-SH" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="R_SH" mnemonicParsing="false" text="R-SH" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="L_KN" mnemonicParsing="false" text="L-KN" GridPane.rowIndex="2" />
+                  <CheckBox fx:id="R_KN" mnemonicParsing="false" text="R-KN" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="2.0" />
+               </opaqueInsets>
+            </GridPane>
+            </children>
+            <padding>
+                <Insets top="10.0" />
+            </padding>
+        </VBox>
+        <Button fx:id="addPatientButton" layoutX="1188.0" layoutY="589.0" mnemonicParsing="false" onAction="#addNewPatient" prefHeight="58.0" prefWidth="106.0" text="Add">
+            <font>
+                <Font size="26.0" />
+            </font>
+        </Button>
+        <Button layoutX="1338.0" layoutY="592.0" mnemonicParsing="false" onAction="#backToMain" prefHeight="40.0" prefWidth="76.0" text="Back" />
+      <Label layoutX="147.0" layoutY="243.0" text="DOA:">
          <font>
-            <Font size="26.0" />
+            <Font size="15.0" />
          </font>
-      </Button>
-   </children>
+      </Label>
+      <Label layoutX="145.0" layoutY="310.0" text="DOB:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="127.0" layoutY="179.0" text="Address:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="143.0" layoutY="112.0" text="Name:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+    </children>
 </AnchorPane>

@@ -21,7 +21,6 @@ public class Controller {
 
     public void switchToAddNewPat(){
         stage.setScene(addNewPatientScene);
-
     }
 
     public void switchToMainScene(){

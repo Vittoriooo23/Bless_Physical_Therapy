@@ -16,8 +16,7 @@ public class Main extends Application {
     public static MyJDBC jdbc = new MyJDBC();
 
     public static Stage stage;
-    public static Scene cScene, mainScene, addNewPatientScene;
-    public static Controller controller = new Controller();
+    public static Scene cScene, mainScene, addNewPatientScene, patientSpecificsScene;
 
 
 
@@ -43,6 +42,9 @@ public class Main extends Application {
 
         root = FXMLLoader.load(getClass().getResource("addNewPatientScene.fxml"));
         addNewPatientScene = new Scene(root, screenSize.getWidth(), screenSize.getHeight());
+
+        root = FXMLLoader.load(getClass().getResource("patientSpecificsScene.fxml"));
+        patientSpecificsScene = new Scene(root, screenSize.getWidth(), screenSize.getHeight());
 
         stage = primaryStage;
     }

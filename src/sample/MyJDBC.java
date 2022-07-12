@@ -23,15 +23,14 @@ public class MyJDBC {
                 return Integer.toString(i+1);
             }
         }
-        ids.add(i+1);
         return Integer.toString(i+1);
     }
 
 
-    public void addPatientToDB(Patient patient){
+    public void addPatientToDB(Patient patient) throws Exception{
         String id = getSmallestId();
         patient.setId(Integer.parseInt(id));
-        String query = "insert into patient values (" +
+        String query = "insert into meachampatient values (" +
                 "\"" + patient.getName() +  "\", " +
                 "\"" + patient.getAddress() + "\", " +
                 "\"" + patient.getDoa() + "\", " +
@@ -40,18 +39,16 @@ public class MyJDBC {
                 "\"" + patient.getCount() + "\", " +
                 "\"" + id + "\");";
 
-        try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/blessphystherapypatients", "root", "blessTherapy");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/blessphystherapypatients", "root", "blessTherapy");
 
-            Statement statement = conn.createStatement();
+        Statement statement = conn.createStatement();
 
-            statement.executeUpdate(query);
-            patients.add(patient);
-            conn.close();
+        statement.executeUpdate(query);
+        patients.add(patient);
+        ids.add(patient.getId());
+        conn.close();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
 
     }
 
@@ -68,6 +65,7 @@ public class MyJDBC {
             statement.executeUpdate(query);
 
             patients.remove(office.findPatient(id));
+            ids.remove(ids.indexOf(id));
             conn.close();
 
         } catch (SQLException e) {
@@ -83,7 +81,7 @@ public class MyJDBC {
 
             Statement statement = conn.createStatement();
 
-            ResultSet resultSet = statement.executeQuery("select * from patient");
+            ResultSet resultSet = statement.executeQuery("select * from meachampatient");
 
             while(resultSet.next()){
                 patients.add(new Patient(
